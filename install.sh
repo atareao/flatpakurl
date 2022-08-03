@@ -27,6 +27,7 @@ chmod +x ~/.local/bin/flatpakurl
 mkdir -p ~/.local/share/flatpakurl/
 cp ./src/*.py ~/.local/share/flatpakurl/
 cp ./data/flatpakurl.desktop ~/.local/share/applications/
+sed  -i "s/{{HOME}}/\/home\/$USER/g" ~/.local/share/applications/flatpakurl.desktop
 update-desktop-database ~/.local/share/applications
 cp ./debian/changelog ~/.local/share/flatpakurl/
 mkdir -p ~/.local/share/icons/flatpakurl/

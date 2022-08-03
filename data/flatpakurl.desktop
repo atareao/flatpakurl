@@ -3,11 +3,9 @@ Encoding=UTF-8
 Version=1.0
 Type=Application
 Terminal=false
-Exec=/bin/bash /home/lorenzo/.local/bin/flatpakurl %u
+Exec=/bin/bash {{HOME}}/.local/bin/flatpakurl %u
 Name=Flatpak url handler
 Comment=Flatpak url handler
-Icon=/home/lorenzo/.local/share/icons/flatpakurl.svg
+Icon={{HOME}}/.local/share/icons/flatpakurl.svg
 Categories=Application;Network;
 MimeType=x-scheme-handler/appstream;
-
-
