@@ -21,50 +21,23 @@
 
 import subprocess
 import shlex
-from os.path import isfile, join, basename
-import glob
 
 
 def get_version():
     command = 'lsb_release -c'
-    po = subprocess.Popen(shlex.split(command), stdout=subprocess.PIPE,
+    result = subprocess.run(shlex.split(command), stdout=subprocess.PIPE,
                           stderr=subprocess.PIPE, shell=False)
-    out, err = po.communicate()
-    return_code = po.wait()
-    if return_code == 0:
-        return out.decode().split('Codename:\t')[1].replace('\n', '')
-    return None
+    return result.stdout.decode("utf-8").split(":")[1].strip()
 
 
 def is_package_installed(package_name):
-    command = 'dpkg-query --show --showformat="${db:Status-Status}\n" "%s"' % (
-        package_name)
-    po = subprocess.Popen(shlex.split(command), stdout=subprocess.PIPE,
-                          stderr=subprocess.PIPE, shell=False)
-    out, err = po.communicate()
-    return_code = po.wait()
-    if return_code == 0:
-        return True
-    return False
+    command = "flatpak list --app"
+    result = subprocess.run(shlex.split(command), stdout=subprocess.PIPE,
+                            stderr=subprocess.PIPE, shell=False)
+    output = result.stdout.decode('utf-8')
+    return output.find(package_name) > -1
 
 
-def is_ppa_repository_added(repository):
-    if repository.find('/') and repository.startswith('ppa:'):
-        repository = repository[4:]
-        firstpart, secondpart = repository.split('/')
-        mypath = '/etc/apt/sources.list.d'
-        onlyfiles = [basename(f).replace('.list', '') for f in
-                     glob.glob(join(mypath, '*.list'))
-                     if isfile(join(mypath, f))]
-        for element in onlyfiles:
-            if element.startswith(firstpart) and \
-                    element[len(firstpart):].find(secondpart) > -1:
-                return True
-    return False
-
-
-if __name__ == '__main__':
-    print(is_package_installed('my-weather-indicator'))
-    print(is_package_installed('utext'))
+if __name__ == "__main__":
     print(get_version())
-    print(is_ppa_repository_added('ppa:atareao/atareao'))
+    print(is_package_installed("com.github.needleandthread.vocal"))

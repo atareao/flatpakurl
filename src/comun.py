@@ -34,7 +34,7 @@ APPNAME = 'flatpakurl'
 APP_CONF = APP + '.conf'
 # check if running from source
 if is_package():
-    ROOTDIR = '/opt/extras.ubuntu.com/flatpakurl'
+    ROOTDIR = os.path.expanduser('~/.local')
     APPDIR = os.path.join(ROOTDIR, 'share/flatpakurl')
     LANGDIR = os.path.join(ROOTDIR, 'locale-langpack')
     BINDIR = os.path.join(ROOTDIR, 'bin')

@@ -1,19 +1,21 @@
-ppaurl
-======
+# flatpakurl
 
-ppaurl is a utility to add PPA repositories to the system
+flatpakurk is a utility to install flatpak packages with a Gui
 
-Download
---------
+## Download
 
 Download the [package][dlp] *or* checkout the source:
 
-    $ git clone https://github.com/atareao/ppaurl
+```
+$ git clone https://github.com/atareao/flatpakurl
+```
 
 
-Installation
-------------
+## Installation
 
-    $ sudo add-apt-repositoy ppa:atareao/ppaurl
-    $ sudo apt-get update
-    $ sudo apt-get install ppaurl
+```
+chmod +x ./installer.sh
+bash ./installer.sh
+```
+
+

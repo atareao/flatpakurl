@@ -1,2 +1,2 @@
 #!/bin/bash
-/usr/bin/python3 /opt/extras.ubuntu.com/flatpakurl/share/flatpakurl/flatpakurl.py "$1"
+/usr/bin/python3 ~/.local/share/flatpakurl/flatpakurl.py "$1"
