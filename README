@@ -14,8 +14,14 @@ $ git clone https://github.com/atareao/flatpakurl
 ## Installation
 
 ```
-chmod +x ./installer.sh
-bash ./installer.sh
+chmod +x ./install.sh
+bash ./install.sh
 ```
 
+## Uninstall
 
+
+```
+chmod +x ./uninstall.sh
+bash ./uninstall.sh
+```
