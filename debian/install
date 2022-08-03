@@ -1,0 +1,6 @@
+src/*.py /opt/extras.ubuntu.com/flatpakurl/share/flatpakurl
+bin/* /usr/bin
+data/icons/*.svg /opt/extras.ubuntu.com/flatpakurl/share/icons
+data/extras-flatpakurl.desktop /usr/share/applications
+debian/changelog /opt/extras.ubuntu.com/flatpakurl/share/flatpakurl
+policykit/actions/com.ubuntu.pkexec.flatpakurl.policy /usr/share/polkit-1/actions/

@@ -1,0 +1,16 @@
+Source: flatpakurl
+Section: utils
+Priority: extra
+Maintainer: Lorenzo Carbonell Cerezo <lorenzo.carbonell.cerezo@gmail.com>
+Build-Depends: debhelper (>= 9)
+Standards-Version: 3.9.4
+Homepage: http://www.atareao.es
+
+Package: flatpakurl
+Architecture: all
+Depends: ${misc:Depends},
+    python3,
+    python3-gi,
+    gir1.2-gtk-3.0
+Description: An utility to add repositories
+ ppaurl is a simple utility to add PPA repositories from web

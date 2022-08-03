@@ -1,0 +1,19 @@
+ppaurl
+======
+
+ppaurl is a utility to add PPA repositories to the system
+
+Download
+--------
+
+Download the [package][dlp] *or* checkout the source:
+
+    $ git clone https://github.com/atareao/ppaurl
+
+
+Installation
+------------
+
+    $ sudo add-apt-repositoy ppa:atareao/ppaurl
+    $ sudo apt-get update
+    $ sudo apt-get install ppaurl
