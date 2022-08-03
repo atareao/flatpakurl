@@ -23,7 +23,7 @@
 
 mkdir -p ~/.local/bin/
 cp ./bin/flatpakurl ~/.local/bin/
-chmod 644 ~/.local/bin/flatpakurl
+chmod +x ~/.local/bin/flatpakurl
 mkdir -p ~/.local/share/flatpakurl/
 cp ./src/*.py ~/.local/share/flatpakurl/
 cp ./data/flatpakurl.desktop ~/.local/share/applications/

@@ -77,6 +77,7 @@ class PPAUrlDialog(Gtk.Window):
         self.set_title(_('Add ppa repository'))
         self.connect('delete-event', Gtk.main_quit)
         self.set_position(Gtk.WindowPosition.CENTER_ALWAYS)
+        print(comun.ICON)
         self.set_icon_from_file(comun.ICON)
         self.set_size_request(600, 50)
         grid = Gtk.Grid()
@@ -134,10 +135,11 @@ class PPAUrlDialog(Gtk.Window):
         self.is_added = False
         self.value = 0.0
         self.is_installing = False
-        self.show_all()
         self.progressbar.set_visible(False)
         self.label.set_visible(False)
         expander.set_expanded(True)
+
+        print(1)
 
     def end(self, anobject, ok, *args):
         self.is_installing = False
@@ -213,7 +215,8 @@ def main(args):
     print(args)
     if len(args) < 2:
         args.append('appstream://com.uploadedlobster.peek')
-    PPAUrlDialog(args)
+    win = PPAUrlDialog(args)
+    win.show_all()
     Gtk.main()
 
 

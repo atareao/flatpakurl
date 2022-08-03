@@ -22,52 +22,32 @@
 import os
 import locale
 import gettext
-import sys
-
-
-def is_package():
-    return __file__.find('src') < 0
 
 
 APP = 'flatpakurl'
 APPNAME = 'flatpakurl'
 APP_CONF = APP + '.conf'
 # check if running from source
-if is_package():
-    ROOTDIR = os.path.expanduser('~/.local')
-    APPDIR = os.path.join(ROOTDIR, 'share/flatpakurl')
-    LANGDIR = os.path.join(ROOTDIR, 'locale-langpack')
-    BINDIR = os.path.join(ROOTDIR, 'bin')
-    ICONDIR = os.path.join(ROOTDIR, 'share/icons')
-    CHANGELOG = os.path.join(APPDIR, 'changelog')
-else:
-    ROOTDIR = os.path.dirname(__file__)
-    LANGDIR = os.path.normpath(os.path.join(ROOTDIR, '../template1'))
-    APPDIR = ROOTDIR
-    ICONDIR = os.path.normpath(os.path.join(ROOTDIR, '../data/icons'))
-    DEBIANDIR = os.path.normpath(os.path.join(ROOTDIR, '../debian'))
-    CHANGELOG = os.path.join(DEBIANDIR, 'changelog')
-#
+ROOTDIR = os.path.expanduser('~/.local')
+APPDIR = os.path.join(ROOTDIR, 'share/flatpakurl')
+LANGDIR = os.path.join(ROOTDIR, 'locale-langpack')
+BINDIR = os.path.join(ROOTDIR, 'bin')
+ICONDIR = os.path.join(ROOTDIR, 'share/icons/flatpakurl')
+CHANGELOG = os.path.join(APPDIR, 'changelog')
 ICON = os.path.join(ICONDIR, 'flatpakurl.svg')
-#
+
 f = open(CHANGELOG, 'r')
 line = f.readline()
 f.close()
 pos = line.find('(')
 posf = line.find(')', pos)
 VERSION = line[pos + 1:posf].strip()
-if not is_package():
-    VERSION = VERSION + '-src'
-####
 
 try:
     current_locale, encoding = locale.getdefaultlocale()
     language = gettext.translation(APP, LANGDIR, [current_locale])
     language.install()
-    if sys.version_info[0] == 3:
-        _ = language.gettext
-    else:
-        _ = language.ugettext
+    _ = language.gettext
 except Exception as e:
     print(e)
     _ = str
