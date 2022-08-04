@@ -1,29 +1,29 @@
-ppaurl (0.1.0-0extras16.04.0) xenial; urgency=medium
+flatpakurl (0.1.0-0extras16.04.0) xenial; urgency=medium
 
   * Progressbar in main window
   * Added spanish translation
 
  -- Lorenzo Carbonell <lorenzo.carbonell.cerezo@gmail.com>  Mon, 19 Mar 2018 07:53:36 +0100
 
-ppaurl (0.0.9-0extras16.04.0) xenial; urgency=medium
+flatpakurl (0.0.9-0extras16.04.0) xenial; urgency=medium
 
   * Show apps to install in dialog
 
  -- Lorenzo Carbonell <lorenzo.carbonell.cerezo@gmail.com>  Sat, 19 Nov 2016 09:04:57 +0100
 
-ppaurl (0.0.8-0extras16.04.1) xenial; urgency=medium
+flatpakurl (0.0.8-0extras16.04.1) xenial; urgency=medium
 
   * Install directly from url
 
  -- Lorenzo Carbonell <lorenzo.carbonell.cerezo@gmail.com>  Sat, 19 Nov 2016 06:57:52 +0100
 
-ppaurl (0.0.7-0extras16.04.1) xenial; urgency=medium
+flatpakurl (0.0.7-0extras16.04.1) xenial; urgency=medium
 
   * Added dialogs
 
  -- Lorenzo Carbonell <lorenzo.carbonell.cerezo@gmail.com>  Thu, 17 Nov 2016 07:16:16 +0100
 
-ppaurl (0.0.6-0extras16.04.0) xenial; urgency=medium
+flatpakurl (0.0.6-0extras16.04.0) xenial; urgency=medium
 
   * Now in background
   * Added carriage return
@@ -35,20 +35,20 @@ ppaurl (0.0.6-0extras16.04.0) xenial; urgency=medium
 
  -- Lorenzo Carbonell <lorenzo.carbonell.cerezo@gmail.com>  Wed, 16 Nov 2016 08:19:11 +0100
 
-ppaurl (0.0.4-0extras16.04.2) xenial; urgency=medium
+flatpakurl (0.0.4-0extras16.04.2) xenial; urgency=medium
 
   * Not in background
 
  -- Lorenzo Carbonell <lorenzo.carbonell.cerezo@gmail.com>  Mon, 14 Nov 2016 21:42:02 +0100
 
-ppaurl (0.0.3-0extras16.04.2) xenial; urgency=medium
+flatpakurl (0.0.3-0extras16.04.2) xenial; urgency=medium
 
   * Do work in background
   * Adding update and upgrade
 
  -- Lorenzo Carbonell <lorenzo.carbonell.cerezo@gmail.com>  Mon, 14 Nov 2016 20:02:09 +0100
 
-ppaurl (0.0.2-0extras16.04.0) xenial; urgency=medium
+flatpakurl (0.0.2-0extras16.04.0) xenial; urgency=medium
 
   * Initial release.
 

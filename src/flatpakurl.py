@@ -1,7 +1,7 @@
 #! /usr/bin/env python3
 # -*- coding: utf-8 -*-
 #
-# This file is part of ppaurl
+# This file is part of flatpakurl
 #
 # Copyright (C) 2016-2017 Lorenzo Carbonell
 # lorenzo.carbonell.cerezo@gmail.com
@@ -69,12 +69,12 @@ class SmartTerminal(Vte.Terminal):
             self.diib.stop()
 
 
-class PPAUrlDialog(Gtk.Window):
+class FlatpakUrlDialog(Gtk.Window):
     def __init__(self, args):
         Gtk.Window.__init__(self)
         if len(args) < 2:
             Gtk.main_quit()
-        self.set_title(_('Add ppa repository'))
+        self.set_title(_('Install a Flatpak package'))
         self.connect('delete-event', Gtk.main_quit)
         self.set_position(Gtk.WindowPosition.CENTER_ALWAYS)
         print(comun.ICON)
@@ -205,9 +205,15 @@ class PPAUrlDialog(Gtk.Window):
     def on_button_ok_clicked(self, button):
         commands = []
         if self.app:
+            if utils.is_package_installed(self.app):
+                dialog = Gtk.MessageDialog(
+                        self, 0, Gtk.MessageType.INFO, Gtk.ButtonsType.YES,
+                        _('Package {} already installed'.format(self.app)))
+                dialog.run()
+                dialog.destroy()
+                return
             commands.append(f"flatpak install -y flathub {self.app}")
             print(commands)
-            # commands = ['ls', 'ls', 'ls', 'ls', 'ls', 'ls', 'ls', 'ls', 'ls']
             self.terminal.execute(commands)
 
 
@@ -215,7 +221,7 @@ def main(args):
     print(args)
     if len(args) < 2:
         args.append('appstream://com.uploadedlobster.peek')
-    win = PPAUrlDialog(args)
+    win = FlatpakUrlDialog(args)
     win.show_all()
     Gtk.main()
 

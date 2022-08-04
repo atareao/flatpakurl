@@ -1,7 +1,7 @@
 #! /usr/bin/env python3
 # -*- coding: utf-8 -*-
 #
-# This file is part of ppaurl
+# This file is part of flatpakurl
 #
 # Copyright (C) 2016-2017 Lorenzo Carbonell
 # lorenzo.carbonell.cerezo@gmail.com
@@ -26,7 +26,7 @@ import shlex
 def get_version():
     command = 'lsb_release -c'
     result = subprocess.run(shlex.split(command), stdout=subprocess.PIPE,
-                          stderr=subprocess.PIPE, shell=False)
+                            stderr=subprocess.PIPE, shell=False)
     return result.stdout.decode("utf-8").split(":")[1].strip()
 
 

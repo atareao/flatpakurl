@@ -12,5 +12,5 @@ Depends: ${misc:Depends},
     python3,
     python3-gi,
     gir1.2-gtk-3.0
-Description: An utility to add repositories
- ppaurl is a simple utility to add PPA repositories from web
+Description: An utility to install flatpak packages
+ flatpakurl is a simple utility to install flatpak packages with a gui

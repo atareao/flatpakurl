@@ -1,7 +1,7 @@
 #! /usr/bin/env python3
 # -*- coding: utf-8 -*-
 #
-# This file is part of ppaurl
+# This file is part of flatpakurl
 #
 # Copyright (C) 2016-2017 Lorenzo Carbonell
 # lorenzo.carbonell.cerezo@gmail.com
@@ -113,7 +113,7 @@ if __name__ == '__main__':
     tc = testclass()
     commands = ['ls', 'ls -la', 'ls']
     diib = DoItInBackground(tc, commands)
-    progreso = Progreso('Adding new ppa', None, len(commands))
+    progreso = Progreso('Install new flatpak', None, len(commands))
     diib.connect('done_one', progreso.increase)
     diib.connect('ended', progreso.close)
     progreso.connect('i-want-stop', diib.stop)
